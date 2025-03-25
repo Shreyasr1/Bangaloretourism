@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangalore Tourism - An Immersive Journey</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background: url('https://source.unsplash.com/1600x900/?bangalore,city') no-repeat center center/cover;
+            color: white;
+            overflow-x: hidden;
+        }
+        .navbar {
+            background: rgba(0, 0, 0, 0.8) !important;
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-in-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let elements = document.querySelectorAll(".fade-in");
+            function reveal() {
+                elements.forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+            window.addEventListener("scroll", reveal);
+            reveal();
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bangalore Tourism - Explore the Unseen</a>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4 fade-in">Embark on a Magical Journey Through Bangalore</h1>
+        <div class="row">
+            <div class="col-md-4 fade-in">
+                <div class="card bg-dark text-white">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Lalbagh_Glasshouse.jpg" class="card-img-top" alt="Lalbagh Botanical Garden">
+                    <div class="card-body">
+                        <h5 class="card-title">Lalbagh Botanical Garden</h5>
+                        <p class="card-text">Step into a wonderland of exotic flora, where history and nature unite in perfect harmony.</p>
+                        <p><strong>Location:</strong> Mavalli, Bangalore</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 fade-in">
+                <div class="card bg-dark text-white">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Cubbon_Park_Bangalore.jpg" class="card-img-top" alt="Cubbon Park">
+                    <div class="card-body">
+                        <h5 class="card-title">Cubbon Park</h5>
+                        <p class="card-text">Lose yourself in a green paradise, where serenity and whispers of the past embrace you.</p>
+                        <p><strong>Location:</strong> Sampangi Rama Nagar, Bangalore</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 fade-in">
+                <div class="card bg-dark text-white">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Bangalore_Palace.jpg" class="card-img-top" alt="Bangalore Palace">
+                    <div class="card-body">
+                        <h5 class="card-title">Bangalore Palace</h5>
+                        <p class="card-text">Step into a bygone era of grandeur, where royal secrets whisper through the corridors.</p>
+                        <p><strong>Location:</strong> Vasanth Nagar, Bangalore</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-white text-center py-3 mt-5">
+        <p>&copy; 2025 Bangalore Tourism | Discover the Unexplored.</p>
+    </footer>
+</body>
+</html>
